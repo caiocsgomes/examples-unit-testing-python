@@ -24,7 +24,7 @@ A good structure would be if we have a class called *MyCoolClass*, that contains
 inside a module called *my_cool_class*, for testing we would create a module called *test_my_cool_class* with a class
 called *TestMyCoolClass* with a method called *test_my_cool_method*. For example:
 
-[my_cool_class.py](https://github.com/caiocsgomes/examples-unit-testing-python/my_cool_class.py)
+[my_cool_class.py](https://github.com/caiocsgomes/examples-unit-testing-python/blob/main/my_cool_class.py)
 
 ```python
 class MyCoolClass:
@@ -32,7 +32,7 @@ class MyCoolClass:
         return a + b
 ```
 
-[test_my_cool_class.py](https://github.com/caiocsgomes/examples-unit-testing-python/test_my_cool_class.py)
+[test_my_cool_class.py](https://github.com/caiocsgomes/examples-unit-testing-python/blob/main/test_my_cool_class.py)
 
 ```python
 class TestMyCoolClass:
@@ -45,14 +45,14 @@ class TestMyCoolClass:
 
 For functions we have the same structure removing the classes.
 
-[my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/my_methods.py)
+[my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/blob/main/my_methods.py)
 
 ```python
 def sum(a, b):
     return a + b
 ```
 
-[test_my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/test_my_methods.py)
+[test_my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/blob/main/test_my_methods.py)
 
 ```python
 def test_sum():
@@ -71,7 +71,7 @@ For this test we will use the requests package:
 pip install requests
 ```
 
-[my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/my_methods.py)
+[my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/blob/main/my_methods.py)
 
 ````python
 def is_user_birthday(id: int) -> bool:
@@ -83,7 +83,7 @@ def is_user_birthday(id: int) -> bool:
 With *patch* we can pass a function we can mock, and then we define the return value we need inside the function we are
 testing.
 
-[test_my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/test_my_methods.py)
+[test_my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/blob/main/test_my_methods.py)
 
 ````python
 @patch('my_methods.requests')
@@ -99,7 +99,7 @@ In some cases the object returned by a function have methods used by the functio
 in the mock we create. The *json* method from the *Response* class is a good example. For this situation we can use
 the *MagickMock* from the *unittest.Mock* and define the function inside the returned object.
 
-[my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/my_methods.py)
+[my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/blob/main/my_methods.py)
 
 ````python
 def get_user_age(id: int) -> str:
@@ -109,7 +109,7 @@ def get_user_age(id: int) -> str:
 
 In this example we are creating a *json* function in our mock that will always return the same.
 
-[test_my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/test_my_methods.py)
+[test_my_methods.py](https://github.com/caiocsgomes/examples-unit-testing-python/blob/main/test_my_methods.py)
 
 ````python
 @patch('my_methods.requests')
